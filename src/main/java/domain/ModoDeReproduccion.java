@@ -1,5 +1,5 @@
 package domain;
 
-public interface ModoDeEjecucion {
+public interface ModoDeReproduccion {
   void ejecutar(Playlist playlist);
 }

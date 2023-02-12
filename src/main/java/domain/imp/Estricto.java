@@ -1,9 +1,9 @@
 package domain.imp;
 
-import domain.ModoDeEjecucion;
+import domain.ModoDeReproduccion;
 import domain.Playlist;
 
-public class Estricto implements ModoDeEjecucion {
+public class Estricto implements ModoDeReproduccion {
   /**
    * @param playlist
    */

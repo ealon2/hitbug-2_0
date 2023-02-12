@@ -1,9 +1,9 @@
 package domain.imp;
 
-import domain.ModoDeEjecucion;
+import domain.ModoDeReproduccion;
 import domain.Playlist;
 
-public class Sugerido implements ModoDeEjecucion {
+public class Sugerido implements ModoDeReproduccion {
   /**
    * @param playlist
    */

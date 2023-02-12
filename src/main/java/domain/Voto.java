@@ -2,7 +2,7 @@ package domain;
 
 public abstract class Voto {
 
-  abstract int obtenerValor();
+  protected abstract int obtenerValor();
 
   public void aplicar(Propuesta propuesta){
     propuesta.agregarVoto(this);
