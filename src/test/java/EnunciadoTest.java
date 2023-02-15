@@ -13,12 +13,14 @@ public class EnunciadoTest {
   ArrayList<Usuario> curadores;
   Cancion unaCancion;
   Usuario unCurador;
+  Usuario unUsuario;
   @BeforeEach
   void setUp(){
     canciones = mock(ArrayList.class);
     curadores = mock(ArrayList.class);
     unaCancion = mock(Cancion.class);
     unCurador = mock(Usuario.class);
+    unUsuario = new Usuario("ezequiel@gmail.com");
     // stubbing appears before the actual execution
     when(canciones.get(0)).thenReturn(unaCancion);
     when(curadores.get(0)).thenReturn(unCurador);
@@ -62,7 +64,7 @@ public class EnunciadoTest {
 
     //TODO: Asumo que existe un Builder que valida que el usuario
     // sea seguidor de la playlist para efectuar una propuesta
-    Propuesta unaPropuesta = new Propuesta(unaCancion,unaPlaylist);
+    Propuesta unaPropuesta = new Propuesta(unUsuario,unaCancion,unaPlaylist);
     assertNotNull(unaPropuesta);
   }
 
@@ -74,7 +76,7 @@ public class EnunciadoTest {
 
     //TODO: Asumo que existe un Builder que valida que el usuario
     // sea seguidor de la playlist para efectuar una propuesta
-    Propuesta unaPropuesta = new Propuesta(unaCancion,unaPlaylist);
+    Propuesta unaPropuesta = new Propuesta(unUsuario,unaCancion,unaPlaylist);
     assertNotNull(unaPropuesta);
 
     Aprobar unaAprobacion = new Aprobar();
@@ -106,7 +108,7 @@ public class EnunciadoTest {
   public void cambiarMiEleccionEnElVoto() {
 
     Playlist unaPlaylist = new Playlist(canciones,curadores);
-    Propuesta unaPropuesta = new Propuesta(unaCancion,unaPlaylist);
+    Propuesta unaPropuesta = new Propuesta(unUsuario,unaCancion,unaPlaylist);
     Voto unVoto = new Aprobar();
 
     //Puedo agregar un voto

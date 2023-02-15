@@ -26,7 +26,7 @@ public class Propuestas {
 
   public void ejecutarPropuestasPendientes(){
     propuestasPendientes.forEach(
-        propuesta -> propuesta.ejecutar()
+        Propuesta::ejecutar
     );
   }
 }

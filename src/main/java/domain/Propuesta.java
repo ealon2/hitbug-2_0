@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 public class Propuesta {
 
+  private final Usuario propietario;
   private final Playlist playlist;
   private final Cancion cancion;
   private ArrayList<Voto> votos;
 
-  public Propuesta(Cancion unaCancion, Playlist playlist){
+  public Propuesta(Usuario propietario,Cancion unaCancion, Playlist playlist){
+    this.propietario = propietario;
     this.playlist = playlist;
     this.cancion = unaCancion;
     this.votos = new ArrayList<>();
@@ -17,8 +19,7 @@ public class Propuesta {
 
   public void agregarVoto(Voto voto){
     this.votos.add(voto);
-    //Ante cada voto, se ejecutan los criterios
-    this.playlist.ejecutarCriterios(this);
+    this.ejecutar();
   }
 
   public void quitarVoto(Voto voto) {
@@ -43,5 +44,9 @@ public class Propuesta {
 
   public void ejecutar(){
     this.playlist.ejecutarCriterios(this);
+  }
+
+  public Usuario obtenerPropietario() {
+    return propietario;
   }
 }

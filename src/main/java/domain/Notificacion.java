@@ -1,5 +1,5 @@
 package domain;
 
-public interface Notificacion {
-  void notificar();
+public enum Notificacion {
+  PROPUESTA_APROBADA, PROPUESTA_RECHAZADA, PROPUESTA_NUEVA;
 }
